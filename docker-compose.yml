@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  php:
+    container_name: php
+    build: php
+    volumes:
+      - ./app:/var/www/html
+
+  database:
+    container_name: MySQL
+    platform: linux/x86_64 #obligatoire pour les users macos vu que mysql existe pas nativement sous ARM
+    image: mysql:8.0.31-debian
+
+    restart: always
+    environment:
+      MYSQL_DATABASE: projet
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "55432:3306"
+    volumes:
+      - ./db-data:/var/lib/mysql
+
+  webserver_nginx:
+    container_name: webserver_nginx
+    build:
+      context: ./nginx
+    volumes:
+      - ./app:/var/www/html
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/sites/:/etc/nginx/sites-available
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+      - ./logs:/var/log
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+      - "443:443"
+
+volumes:
+  db-data:
