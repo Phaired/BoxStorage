@@ -1,29 +1,26 @@
-FROM php:8.1.4-fpm
+ARG PHP_ALPINE
+ARG PHP_VERSION
 
-RUN ln -snf /usr/share/zoneinfo/"Europe/Paris" /etc/localtime && echo "Europe/Paris" > /etc/timezone \
-&& printf '[PHP]\ndate.timezone = "%s"\n', "Europe/Paris" > /usr/local/etc/php/conf.d/tzone.ini \
-&& "date"
+FROM php:${PHP_VERSION}-fpm-alpine${PHP_ALPINE}
+ARG PHP_EXTENSIONS
+ARG TIMEZONE
 
-RUN apt-get update \
-    &&  apt-get install -y --no-install-recommends \
-        locales apt-utils git libicu-dev g++ libpng-dev libxml2-dev libzip-dev libonig-dev libxslt-dev unzip libpq-dev nodejs npm wget \
-        apt-transport-https lsb-release ca-certificates
+RUN apk add --no-cache tzdata
+ENV TZ $TIMEZONE
+RUN printf '[PHP]\ndate.timezone = '${TZ}'\n' > /usr/local/etc/php/conf.d/tzone.ini
 
-RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen  \
-    &&  echo "fr_FR.UTF-8 UTF-8" >> /etc/locale.gen \
-    &&  locale-gen
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
+RUN chmod +x /usr/local/bin/install-php-extensions && install-php-extensions ${PHP_EXTENSIONS}
 
+RUN curl -o /usr/local/bin/composer https://getcomposer.org/download/latest-stable/composer.phar && \
+    chmod +x /usr/local/bin/composer
 
-RUN docker-php-ext-configure \
-            intl \
-    &&  docker-php-ext-install \
-            pdo pdo_mysql pdo_pgsql opcache intl zip calendar dom mbstring gd xsl
-
-RUN pecl install apcu && docker-php-ext-enable apcu
+RUN apk add --no-cache git bash &&  \
+    curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.alpine.sh' | bash && apk add symfony-cli
 
 WORKDIR /var/www/html
 
-CMD composer i -o ; php-fpm
+CMD ["php-fpm"]
 
 EXPOSE 9000

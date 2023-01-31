@@ -1,13 +1,19 @@
 version: '3.7'
 services:
   php:
-    container_name: php
-    build: php
+    container_name: ${COMPOSE_PROJECT_NAME}_PHP
+    build:
+      context: ./php
+      args:
+        PHP_EXTENSIONS: ${PHP_EXTENSIONS}
+        PHP_VERSION: ${PHP_VERSION}
+        PHP_ALPINE: ${PHP_ALPINE}
+        TIMEZONE: ${TIMEZONE}
     volumes:
       - ./app:/var/www/html
 
   database:
-    container_name: MySQL
+    container_name: ${COMPOSE_PROJECT_NAME}_MySQL
     platform: linux/x86_64 #obligatoire pour les users macos vu que mysql existe pas nativement sous ARM
     image: mysql:8.0.31-debian
     environment:
@@ -18,10 +24,9 @@ services:
     volumes:
       - db-data:/var/lib/mysql
 
-  webserver_nginx:
-    container_name: webserver_nginx
-    build:
-      context: ./nginx
+  nginx:
+    container_name: ${COMPOSE_PROJECT_NAME}_NGINX
+    build: ./nginx
     volumes:
       - ./app:/var/www/html
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
