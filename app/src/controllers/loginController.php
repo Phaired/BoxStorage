@@ -27,14 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             } else {
                 $usrObj = new Users();
                 $user = $usrObj->getUserByUsername($username);
-
-
-                    if (password_verify($user->password, $password)) {
-                        $_SESSION['username'] = $username;
+                    if (password_verify($password, $user->hash)) {
+                        $_SESSION['username'] = $user->username;
                         header('Location: /');
                         exit();
                     } else {
-                        header("Location: /public/index.php?erreur=Mot de passe ou utilisateur incorrect(s)");
+                        echo 'error password or username';
                         exit();
                     }
 

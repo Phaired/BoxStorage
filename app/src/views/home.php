@@ -1,2 +1,7 @@
 <?php
-echo "welcome home page";
+session_start();
+if(isset($_SESSION['username']))
+{
+    echo "welcome home page ".$_SESSION['username'];
+
+}

@@ -1,23 +1,17 @@
 <?php
-
+require_once ('../src/utils/Database.php');
 class Users
 {
-    private Database $db;
     //Predefine Here
     public int $id;
     public string $username;
     public string $email;
-    public string $password;
+    public string $hash;
     public string $firstName;
     public string $lastName;
     public string $zipcode;
     public string $city;
     public string $address;
-
-    public function __construct(){
-        include_once ('../src/utils/Database.php');
-        $this->db = new Database();
-    }
 
     public function getUserByUsername(string $username): Users
     {
@@ -25,15 +19,16 @@ class Users
         $data = [
             'username' => $username
         ];
-        $sql = "SELECT * from users where username = :username;";
-        $result = $this->db->db->prepare($sql);
-        var_dump($result);
+        $sql = "SELECT * from users where username = :username";
+        $db = Database::getInstance();
+        $result = $db->prepare($sql);
         $result->execute($data);
-        var_dump($result);
+        $result = $result->fetch();
+
         $usrObj->id = $result['id'];
         $usrObj->username = $result['username'];
         $usrObj->email = $result['email'];
-        $usrObj->password = $result['password'];
+        $usrObj->hash = $result['password'];
         $usrObj->firstName = $result['firstName'];
         $usrObj->lastName = $result['lastName'];
         $usrObj->zipcode = $result['zipcode'];
