@@ -1,6 +1,6 @@
 <?php
 $request = $_SERVER['REQUEST_URI'];
-$authorized_pages = ["/", "/login", "/catalog"];
+$authorized_pages = ["/", "/login", "/catalog", "/controllers/loginController.php"];
 if(in_array($request, $authorized_pages)) {
     switch ($request)
     {
@@ -12,6 +12,9 @@ if(in_array($request, $authorized_pages)) {
             break;
         case "/catalog" :
             require "../src/views/catalog.php";
+            break;
+        case "/controllers/loginController.php":
+            require "../src/controllers/loginController.php";
             break;
         default:
             http_response_code(404);

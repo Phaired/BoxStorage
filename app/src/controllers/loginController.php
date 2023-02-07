@@ -3,11 +3,9 @@
  * @var PDO $db
  */
 session_start();
-require_once('../utils/connect-db.php');
-//base pour vous connecter à la DB avec PDO
-
+include_once ('../src/models/Users.php');
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    try {
+
         if (isset($_POST['USER_PASSWORD']) && isset($_POST['USER_NAME'])) # Validation des champs necessaire
         {
             function validate($data)
@@ -27,20 +25,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 header("Location: /public/index.php?erreur=Le mot de passe est nécessaire");
                 exit();
             } else {
-                $sql = "SELECT * from users where username = :username;";
-                $result = $db->prepare($sql);
-                $data = [
-                    'username' => $username
-                ];
-                $result->execute($data);
-                if (!$result) {
-                    header("Location: /public/index.php?erreur=Impossible d'acceder à la base de données");
-                } else {
-                    $result = $result->fetch(PDO::FETCH_ASSOC);
+                $usrObj = new Users();
+                $user = $usrObj->getUserByUsername($username);
 
-                    if (password_verify($password, $result['password'])) {
+
+                    if (password_verify($user->password, $password)) {
                         $_SESSION['username'] = $username;
-                        header('Location: /pages/home.php');
+                        header('Location: /');
                         exit();
                     } else {
                         header("Location: /public/index.php?erreur=Mot de passe ou utilisateur incorrect(s)");
@@ -49,10 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                 }
             }
-        }
-    } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage() . "<br/>";
-        die();
-    }
+
+
 }
 
