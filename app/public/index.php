@@ -2,4 +2,5 @@
 /**
  * @var PDO $db
  */
-//base pour vos connexions à la DB avec PDO
+require_once('../connect-db.php');
+//base pour vous connecter à la DB avec PDO
