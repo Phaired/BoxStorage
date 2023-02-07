@@ -11,7 +11,7 @@
 <form action="../controllers/loginController.php" method="post">
     <?php
     if (isset($_GET['erreur'])) {
-        echo "<p class=\"erreur\">".htmlspecialchars($_GET['erreur'])."</p>";
+        echo "<p class='erreur'>".htmlspecialchars($_GET['erreur'])."</p>";
     } ?>
     <input type="text" name="USER_NAME" id="USER_NAME" placeholder="entrer votre login"><br>
     <input type="password" name="USER_PASSWORD" id="USER_PASSWORD" placeholder="entrer votre mot de passe">

@@ -16,11 +16,13 @@ class Users
     public function getUserByUsername(string $username): Users
     {
         $usrObj = new Users();
+        $db = Database::getInstance();
+
         $data = [
             'username' => $username
         ];
+
         $sql = "SELECT * from users where username = :username";
-        $db = Database::getInstance();
         $result = $db->prepare($sql);
         $result->execute($data);
         $result = $result->fetch();
