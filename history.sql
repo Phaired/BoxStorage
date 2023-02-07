@@ -46,3 +46,18 @@ create table stocks
         foreign key (shoeId) references articles (shoeId)
 );
 
+
+create table projet.users
+(
+    id        int auto_increment,
+    username  varchar(255) not null,
+    email     varchar(255) not null,
+    password  varchar(255) not null,
+    firstName varchar(255) not null,
+    lastName  varchar(255) not null,
+    zipcode   varchar(16)  not null,
+    city      varchar(255) not null,
+    address   varchar(255) not null,
+    constraint users_pk
+        primary key (id)
+);
