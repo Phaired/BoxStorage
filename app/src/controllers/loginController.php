@@ -5,7 +5,6 @@
 session_start();
 include_once ('../src/models/Users.php');
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
         if (isset($_POST['USER_PASSWORD']) && isset($_POST['USER_NAME'])) # Validation des champs necessaire
         {
             function validate($data)
@@ -27,18 +26,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             } else {
                 $usrObj = new Users();
                 $user = $usrObj->getUserByUsername($username);
-                    if (password_verify($password, $user->hash)) {
-                        $_SESSION['username'] = $user->username;
-                        header('Location: /');
-                        exit();
-                    } else {
+                    if($user!=null){
+                        if (password_verify($password, $user->hash)) {
+                            $_SESSION['username'] = $user->username;
+                            header('Location: /');
+                            exit();
+                        } else {
+                            echo 'error password or username';
+                            exit();
+                        }
+                    }
+                    else{
                         echo 'error password or username';
                         exit();
                     }
-
                 }
         }
-
 
 }
 
