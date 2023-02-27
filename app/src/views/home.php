@@ -18,14 +18,12 @@ echo '<!DOCTYPE html>
         <div id="media">
             <img id="insta" src="./img/insta.svg" alt="instagram">
             <img id="twitter" src="./img/twitter.svg" alt="twitter">
+            <a href="./login"><img id="profil" src="./img/profil.svg" alt="profil"></a>
         </div>';
 echo '<h1>boxStorage,</h1><h1>to serve you </h1>';
 if(isset($_SESSION['username']))
 {
     echo "<h1>".$_SESSION['username']."</h1>";
-}else
-{
-    echo "<h1><a class='login' href='./login'>Login<a/></h1>";
 }
         echo '<div id="introduction"><br>
             <h2>
