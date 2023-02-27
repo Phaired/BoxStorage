@@ -1,7 +1,7 @@
 html{
     background-image: url('../img/jordan1.jpg');
-    background-size: 105%;
     background-repeat: no-repeat;
+    background-size: 100vw;
 }
 
 h1, h2, #login{
@@ -10,8 +10,8 @@ h1, h2, #login{
 }
 
 #background {
-    height: 100vh;
     width: 100vw;
+    height: 105vh;
     position: absolute;
     inset: 0;
     background-size: 100%;
@@ -70,18 +70,24 @@ h2{
 }
 
 #media{
+    position: absolute;
     display: flex;
     flex-direction: row;
     padding-left: 80%;
 }
 
 #insta{
-    width: 40%;
+    width: 31%;
     z-index: 1;
 }
 
 #twitter{
-    width: 32%;
+    width: 24%;
+    z-index: 1;
+}
+
+#profil{
+    width: 75%;
     z-index: 1;
 }
 
