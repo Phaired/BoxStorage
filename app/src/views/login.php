@@ -26,7 +26,7 @@ if(isset($_SESSION['username']))
     <input type="text" name="USER_NAME" id="USER_NAME" placeholder="login"><br>
     <input type="password" name="USER_PASSWORD" id="USER_PASSWORD" placeholder="password">
     <input type="submit" name="login" value="Log in">
-    <a href="/signin"><input type="button" id="signin" name="signin" value="Sign up"></a>
+    <a href="/signup"><input type="button" id="signin" name="signin" value="Sign up"></a>
 </form>
 </body>
 </html>

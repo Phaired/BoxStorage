@@ -43,6 +43,20 @@ class Users
             return null;
         }
     }
+
+
+    public function addUser(Users $users)
+    {
+        $sql = "INSERT INTO users (username, email, password, firstName, lastName, zipcode, city, address) 
+        values (:username, :email, :password, :firstName, :lastName, :zipcode, :city, :address)";
+
+        $data = [
+            "username" => $users->username,
+            "email" => $users->email,
+        ];
+
+
+    }
 }
 
 

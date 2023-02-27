@@ -4,6 +4,8 @@
  */
 session_start();
 include_once ('../src/models/Users.php');
+
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (isset($_POST['USER_PASSWORD']) && isset($_POST['USER_NAME'])) # Validation des champs necessaire
         {
@@ -38,4 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
 
 }
+
+
+
 
