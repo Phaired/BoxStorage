@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 echo '<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,7 +8,8 @@ echo '<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/home.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="./img/logo.png" />
+    <title>Home</title>
 </head>
 <body>
     <div id="background"></div>
@@ -20,10 +20,12 @@ echo '<!DOCTYPE html>
             <img id="twitter" src="./img/twitter.svg" alt="twitter">
             <a href="./login"><img id="profil" src="./img/profil.svg" alt="profil"></a>
         </div>';
-echo '<h1>boxStorage,</h1><h1>to serve you </h1>';
 if(isset($_SESSION['username']))
 {
-    echo "<h1>".$_SESSION['username']."</h1>";
+    echo "<h1>Welcome back ".$_SESSION['username']."</h1>";
+}
+else{
+    echo '<h1>boxStorage,</h1><h1>to serve you </h1>';
 }
         echo '<div id="introduction"><br>
             <h2>

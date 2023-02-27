@@ -7,8 +7,13 @@ $router->map('GET', '/', function() {
     require dirname(__DIR__).'/src/views/home.php';
 });
 
+
 $router->map('GET', '/login', function() {
     require dirname(__DIR__).'/src/views/login.php';
+});
+
+$router->map('GET', '/signin', function() {
+    require dirname(__DIR__) . '/src/views/signup.php';
 });
 
 $router->map('POST','/controllers/loginController.php', function () {

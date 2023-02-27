@@ -1,5 +1,18 @@
 <?php
-echo"
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/signup.css">
+    <link rel="shortcut icon" href="./img/logo.png" />
+    <title>Sign up</title>
+</head>
+<body>
 <div id='background'>
       <div id='container'>
         <form id='formSignUp' action=''>
@@ -7,7 +20,6 @@ echo"
             <label for='username'>Username</label>
             <input id='username' name='username' type='text' />
           </div>
-
           <div class='formItems'>
             <label for='firstname'>FirstName</label>
             <input id='firstname' name='firstname' type='text' />
@@ -26,11 +38,7 @@ echo"
           </div>
           <div class='formItems'>
             <label for='confirmpassword'>Confirm Password</label>
-            <input
-              id='confirmpassword'
-              name='confirmpassword'
-              type='password'
-                  />
+            <input id='confirmpassword' name='confirmpassword' type='password'/>
           </div>
           <div class='formItems' id='zipcity'>
             <div id='zipGroup'>
@@ -47,12 +55,12 @@ echo"
             <input name='address' id='address' type='text' />
           </div>
           <div class='formItems'>
-          <input id='submit' type='submit' value='Save'>
+              <input id='submit' type='submit' value='Save'>
+              <input id='reset' type='reset' value='Reset'>
           </div>
         </form>
         <h1>Your Informations</h1>
-
       </div>
-
-    </div>
-    ";
+</div>
+</body>
+</html>';
