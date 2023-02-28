@@ -12,24 +12,16 @@ $brands = getBrands();
 
     <label for="brand">Brands </label>
     <select name="brand" id="brand">
-        <option value="">--Please choose a brand--</option>
+        <option value="">-- Please choose a brand --</option>
 
         <?php
 
         foreach ($brands as $key => $value) {
             $value;
-            //echo "<option value='" . $value . "'>" . $value . "</option>";
+            echo "<option value='" . $value["brand"] . "'>" . $value["brand"] . "</option>";
         }
 
-        var_dump($brands);
         ?>
-
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
     </select>
 </div>
 <div id="products"></div>
