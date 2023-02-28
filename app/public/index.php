@@ -32,7 +32,13 @@ $router->map('GET', '/catalog', function() {
     require dirname(__DIR__).'/src/views/catalog.php';
 });
 
+$router->map('GET', '/admin', function() {
+    require dirname(__DIR__).'/src/views/admin.php';
+});
 
+$router->map('POST', '/admin', function() {
+    require dirname(__DIR__).'/src/views/admin.php';
+});
 
 $match = $router->match();
 
