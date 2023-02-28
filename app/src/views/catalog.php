@@ -9,8 +9,9 @@ $brands = getBrands();
 <div id="filter">
     <label for="keyword">Keyword </label>
     <input type="text" id="keyword" name="keyword"/>
+    <input type="button" id="search" name="search" value="Search"/>
 
-    <label for="brand">Brands </label>
+    <label for="brand">Brand </label>
     <select name="brand" id="brand">
         <option value="">-- Please choose a brand --</option>
 
@@ -22,7 +23,13 @@ $brands = getBrands();
         }
 
         ?>
+
     </select>
+
+    <label>Min price</label>
+    <input type="text" id="min-price" name="min-price" />
+    <label>Max price</label>
+    <input type="text" id="max-price" name="max-price" />
 </div>
 <div id="products"></div>
 
@@ -37,7 +44,7 @@ $brands = getBrands();
 $articles = new Article();
 $articles->brand = "Nike";
 $articles->gender = "men";
-var_dump($articles->getArticles("", 10, 0));
+//var_dump($articles->getArticles("", 10, 0));
 Article::getBrands();
 
 include "footer.php";
