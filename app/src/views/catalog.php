@@ -1,7 +1,7 @@
 <?php
 require_once "../src/controllers/catalogController.php";
 
-include "header.php";
+include_once ("header.php");
 
 $brands = getBrands();
 ?>

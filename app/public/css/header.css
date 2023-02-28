@@ -6,4 +6,100 @@ header {
 header ul {
     display: flex;
 }
+html{
+    background-image: url('../img/jordan1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw;
+}
 
+h1, h2, #login{
+    font-family: Arial, Arial, sans-serif;
+    overflow-wrap: break-word;
+}
+
+#background {
+    width: 100vw;
+    height: 105vh;
+    position: absolute;
+    inset: 0;
+    background-size: 100%;
+    background-color: rgba(255, 255, 255, 0.550);
+}
+
+#content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+}
+
+#logo{
+    margin-left: 5%;
+    height: 25%;
+    width: 35%;
+}
+
+#introduction{
+    width: 40%;
+    height: 30%;
+}
+
+#login{
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 72%;
+    cursor: pointer;
+    transition: all 300ms;
+    text-align: center;
+
+}
+
+h1{
+    margin-left: 10%;
+    font-size: larger;
+    font-weight: 900;
+    font-size: 3.2rem;
+}
+
+h2{
+    margin-left: 25%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#login:hover {
+    background-color: rgb(33, 33, 33);
+    margin-left: 12%;
+    margin-right: 70%;
+}
+
+#media{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    padding-left: 80%;
+}
+
+#insta{
+    width: 31%;
+    z-index: 1;
+}
+
+#twitter{
+    width: 24%;
+    z-index: 1;
+}
+
+#profil{
+    width: 75%;
+    z-index: 1;
+}
+
+.login {
+    text-decoration: underline;
+    color: red;
+}
