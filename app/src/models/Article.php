@@ -67,7 +67,7 @@ class Article
         $result->execute();
         //var_dump($result);
         //var_dump($articles);
-        return $result->fetchAll(PDO::FETCH_ASSOC);
+        return json_encode($result->fetchAll(PDO::FETCH_ASSOC));
         /*
         $->id = $result['id'];
         $usrObj->username = $result['username'];
