@@ -51,7 +51,9 @@ form input[type="text"]{
 }
 select{
     color: white;
-    justify-content: center;
+    position: center;
+    padding: 5px 5px;
+
 }
 form input[type="submit"]{
     border: 0px;

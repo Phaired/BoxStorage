@@ -76,21 +76,21 @@ h2{
     position: absolute;
     display: flex;
     flex-direction: row;
-    padding-left: 80%;
+    padding-left: 70%;
 }
 
 #insta{
-    width: 100%;
+    width: 8vw;
     z-index: 1;
 }
 
 #twitter{
-    width: 80%;
+    width: 6vw;
     z-index: 1;
 }
 
 .profil{
-    width: 50%;
+    width: 8vw;
     z-index: 1;
 }
 
