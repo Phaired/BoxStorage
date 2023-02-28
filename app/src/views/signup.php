@@ -15,7 +15,11 @@ session_start();
 <body>
 <div id='background'>
       <div id='container'>
-        <form id='formSignUp' action=''>
+        <form action='../controllers/signupController.php' method="post">
+            <?php
+            if (isset($_GET['erreur'])) {
+                echo "<p class='erreur'>".htmlspecialchars($_GET['erreur'])."</p>";
+            } ?>
           <div class='formItems'>
             <label for='username'>Username</label>
             <input id='username' name='username' type='text' />

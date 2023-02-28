@@ -47,15 +47,24 @@ class Users
 
     public function addUser(Users $users)
     {
-        $sql = "INSERT INTO users (username, email, password, firstName, lastName, zipcode, city, address) 
-        values (:username, :email, :password, :firstName, :lastName, :zipcode, :city, :address)";
+        $sql = "INSERT INTO projet.users (username, email, password, firstName, lastName, zipcode, city, address) 
+                           values (:username, :email, :password, :firstName, :lastName, :zipcode, :city, :address)";
+
+        $db = Database::getInstance();
 
         $data = [
             "username" => $users->username,
             "email" => $users->email,
+            "password" => $users->hash,
+            "firstName" => $users->firstName,
+            "lastName" => $users->lastName,
+            "zipcode" => $users->zipcode,
+            "city" => $users->city,
+            "address" => $users->address,
         ];
-
-
+        $result = $db->prepare($sql);
+        $result->execute($data);
+        return true;
     }
 }
 
