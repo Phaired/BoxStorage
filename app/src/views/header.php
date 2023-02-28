@@ -28,3 +28,6 @@ if(isset($_SESSION['username']))
 else{
     echo '<a href="./login"><img class="profil" src="./img/profil.svg" alt="profil"></a>';
 }
+echo
+"    </div>
+</body>";
