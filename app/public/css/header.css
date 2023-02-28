@@ -28,10 +28,10 @@ header ul {
     position: absolute;
     display: flex;
     flex-direction: row;
-    padding-left: 90%;
+    padding-left: 80%;
 }
 
 .profil{
-    width: 60%;
+    width: 40%;
     z-index: 1;
 }

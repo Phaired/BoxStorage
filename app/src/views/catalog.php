@@ -5,12 +5,13 @@ include_once ("header.php");
 
 $brands = getBrands();
 ?>
-
+<link rel="stylesheet" href="css/catalog.css">
+<link rel="shortcut icon" href="./img/logo_simple.png" />
 <div id="filter">
     <form id="form" action="../src/controllers/catalogController.php" method="post">
-        <label for="keyword">Keyword </label>
+        <label for="keyword">KEYWORD</label>
         <input type="text" id="keyword" name="keyword"/>
-        <label for="brand">Brand </label>
+        <label for="brand">BRAND</label>
         <select name="brand" id="brand">
             <option value="">-- Please choose a brand --</option>
 
@@ -24,9 +25,9 @@ $brands = getBrands();
             ?>
 
         </select>
-        <label>Min price</label>
+        <label>MIN PRICE</label>
         <input type="text" id="min-price" name="min-price" />
-        <label>Max price</label>
+        <label>MAX PRICE</label>
         <input type="text" id="max-price" name="max-price" />
         <input type="submit" name="search" value="Search">
     </form>
