@@ -14,6 +14,7 @@ if(isset($_SESSION['username']))
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="./img/logo_simple.png" />
     <title>Log in</title>
 </head>
 <body>

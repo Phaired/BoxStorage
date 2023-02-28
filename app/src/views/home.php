@@ -8,7 +8,7 @@ echo '<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="shortcut icon" href="./img/logo.png" />
+    <link rel="shortcut icon" href="./img/logo_simple.png" />
     <title>Home</title>
 </head>
 <body>
