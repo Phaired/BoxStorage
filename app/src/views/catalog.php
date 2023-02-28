@@ -9,8 +9,6 @@ $brands = getBrands();
 <div id="filter">
     <label for="keyword">Keyword </label>
     <input type="text" id="keyword" name="keyword"/>
-    <input type="button" id="search" name="search" value="Search"/>
-
     <label for="brand">Brand </label>
     <select name="brand" id="brand">
         <option value="">-- Please choose a brand --</option>
@@ -25,11 +23,11 @@ $brands = getBrands();
         ?>
 
     </select>
-
     <label>Min price</label>
     <input type="text" id="min-price" name="min-price" />
     <label>Max price</label>
     <input type="text" id="max-price" name="max-price" />
+    <input type="button" id="search" name="search" value="Search"/>
 </div>
 <div id="products"></div>
 
