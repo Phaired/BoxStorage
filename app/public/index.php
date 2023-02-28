@@ -16,6 +16,10 @@ $router->map('GET', '/signup', function() {
     require dirname(__DIR__) . '/src/views/signup.php';
 });
 
+$router->map('GET','/logout', function () {
+    require dirname(__DIR__).'/src/controllers/logoutController.php';
+});
+
 $router->map('POST','/controllers/signupController.php', function () {
     require dirname(__DIR__).'/src/controllers/signupController.php';
 });

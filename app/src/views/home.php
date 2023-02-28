@@ -17,9 +17,15 @@ echo '<!DOCTYPE html>
         <img id="logo" src="./img/logo.png" alt="logo boxstorage">
         <div id="media">
             <img id="insta" src="./img/insta.svg" alt="instagram">
-            <img id="twitter" src="./img/twitter.svg" alt="twitter">
-            <a href="./login"><img id="profil" src="./img/profil.svg" alt="profil"></a>
-        </div>';
+            <img id="twitter" src="./img/twitter.svg" alt="twitter">';
+if(isset($_SESSION['username']))
+{
+    echo '<a href="./logout"><img class="profil" src="./img/logout.svg" alt="logout"></a>';
+}
+else{
+    echo '<a href="./login"><img class="profil" src="./img/profil.svg" alt="profil"></a>';
+};
+echo        '</div>';
 if(isset($_SESSION['username']))
 {
     echo "<h1>Welcome back ".$_SESSION['username']."</h1>";

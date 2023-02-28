@@ -24,24 +24,14 @@ header ul {
     width: 25%;
 }
 
-#media{
+#icones{
     position: absolute;
     display: flex;
     flex-direction: row;
     padding-left: 80%;
 }
 
-#insta{
-    width: 31%;
-    z-index: 1;
-}
-
-#twitter{
-    width: 24%;
-    z-index: 1;
-}
-
-#profil{
-    width: 75%;
+.profil{
+    width: 100%;
     z-index: 1;
 }

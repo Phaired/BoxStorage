@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include "head.php";
 
 echo '<!DOCTYPE html>
@@ -15,13 +15,16 @@ echo '<!DOCTYPE html>
 </head>
 <body>'
 ;
-
 echo
 '<div id="content">
         <img id="logo" src="./img/logo.png" alt="logo boxstorage">
-        <div id="media">
-            <img id="insta" src="./img/insta.svg" alt="instagram">
-            <img id="twitter" src="./img/twitter.svg" alt="twitter">
-            <a href="./login"><img id="profil" src="./img/profil.svg" alt="profil"></a>
-        </div>'
+        <div id="icones">'
 ;
+
+if(isset($_SESSION['username']))
+{
+    echo '<a href="./logout"><img class="profil" src="./img/logout.svg" alt="logout"></a>';
+}
+else{
+    echo '<a href="./login"><img class="profil" src="./img/profil.svg" alt="profil"></a>';
+}
