@@ -4,6 +4,7 @@ require_once "../src/models/Article.php";
 //echo Article::getArticle("0042f5c5-8be4-4a40-982b-1b31dacec04b");
 ?>
 <link rel="stylesheet" href="../css/product_detail.css">
+<title>Product</title>
 <section class="product_section">
     <article class="product">
         <div class="product_img">
@@ -29,5 +30,4 @@ require_once "../src/models/Article.php";
         </div>
     </article>
 </section>
-<script type="module" src="../js/product.js"></script>
 <script type="module" src="../js/product.js"></script>

@@ -3,6 +3,7 @@
 <div id="root"></div>
 <script src="../js/admin.js"></script>
 <link rel="stylesheet" href="../css/admin.css">
+<title>Admin</title>
 <?php
 require_once "../src/models/Article.php";
 $data =  json_decode(Article::getArticles(null,-1, -1), true);
