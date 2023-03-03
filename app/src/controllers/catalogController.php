@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     "max_price" => $data["max_price"]
                 ),
                 1,
-                10
+                12
             );
             break;
     }

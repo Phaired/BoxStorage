@@ -62,10 +62,11 @@ function _populateBrands(response) {
 }
 
 function addProductsToCatalog(response) {
-    var product;
+    console.log(response)
+    let product = "";
     var catalog = document.getElementById("products");
     response.map((item)=> {
-        product = '<a href='+"/product/"+item.shoeId+'><div id="product">' +
+        product += '<a href='+"/product/"+item.shoeId+'><div id="product">' +
             '<img id="product_image" src=' + item.imageUrl + 'alt="item photo">' +
             '<h1 id="product_title">'+item.name+'</h1> <div id="product_details">' +
             '<h2 id="product_price">'+item.retailPrice+'</h2>' +
