@@ -21,8 +21,7 @@ class Article
     public $tags;
 
     public static function getArticles(array|null $search, int $limit, int $offset) {
-        //$queryArgs = Article::buildQueryArgs();
-        $sql = "select * from articles ";//where brand = " . $search->brand;
+        $sql = "select * from articles ";
         if ($search != null) {
             $sqlBrand = $search["brand"] != null ? "brand = '{$search["brand"]}'" : "";
             $sqlMin = $search["min_price"] != null ? "retailPrice >=  {$search["min_price"]}" : "";
@@ -41,48 +40,18 @@ class Article
             $sql = $sql . " limit " . $limit . ", " . $offset;
         }
         $db = Database::getInstance();
-        //var_dump($sql);
         $result = $db->prepare($sql);
-        //$result->execute($data);
         $result->execute();
-        //var_dump($result);
-        //$articles = $result->fetchAll();
         return json_encode($result->fetchAll(PDO::FETCH_ASSOC));
-/*
-        $sql = !empty($category) ? $sql . " where category = " . $category : $sql;
-        $sql = $sql . " limit " . $limit . ", " . $offset ;
-        $db = Database::getInstance();
-        $result = $db->prepare($sql);
-        //$result->execute($data);
-        $result->execute();
-        var_dump($result);
-        $articles = $result->fetchAll();
-        var_dump($articles);*/
-        /*
-        $->id = $result['id'];
-        $usrObj->username = $result['username'];
-        $usrObj->email = $result['email'];
-        $usrObj->password = $result['password'];
-        $usrObj->firstName = $result['firstName'];
-        $usrObj->lastName = $result['lastName'];
-        $usrObj->zipcode = $result['zipcode'];
-        $usrObj->city = $result['city'];
-        $usrObj->zipcode = $result['zipcode'];
-        $usrObj->address = $result['address'];
-        return $usrObj;
-        */
     }
 
-    /*
-    private static function _buildQueryArgs() {
-        //$array = get_object_vars($this);
-        foreach($array as $key => $value) {
-            echo $key . ": " . $value . "<br>";
-        }
-
-        $str = "1";
-        // for each if != null concat and key = value
-    }*/
+    public static function getArticle(string $shoeId) {
+        $sql = "select * from articles where shoeId = '{$shoeId}'";
+        $db = Database::getInstance();
+        $result = $db->prepare($sql);
+        $result->execute();
+        return json_encode($result->fetch(PDO::FETCH_ASSOC));
+    }
 
     public static function getBrands() {
         $sql = "select distinct brand from articles";

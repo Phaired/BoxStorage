@@ -11,7 +11,6 @@ $router->map('POST', '/catalogController.php', function() {
     require dirname(__DIR__).'/src/controllers/catalogController.php';
 });
 
-
 $router->map('GET', '/login', function() {
     require dirname(__DIR__).'/src/views/login.php';
 });
@@ -34,6 +33,14 @@ $router->map('POST','/controllers/loginController.php', function () {
 
 $router->map('GET', '/catalog', function() {
     require dirname(__DIR__).'/src/views/catalog.php';
+});
+
+$router->map('GET', '/product/[*:id]', function($id) {
+    require dirname(__DIR__).'/src/views/product.php';
+});
+
+$router->map('POST', '/productController.php', function() {
+    require dirname(__DIR__).'/src/controllers/productController.php';
 });
 
 $router->map('GET', '/admin', function() {
