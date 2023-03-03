@@ -16,7 +16,6 @@ $router->map('GET', '/login', function() {
     require dirname(__DIR__).'/src/views/login.php';
 });
 
-
 $router->map('GET', '/signup', function() {
     require dirname(__DIR__) . '/src/views/signup.php';
 });

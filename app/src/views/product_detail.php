@@ -5,7 +5,7 @@ include "header.php";
 <section class="product_section">
     <article class="product">
         <div class="product_img">
-            <img id="product_image" src="../img/jordan1.jpg" alt="image product">
+            <img id="product_image" src="../img/sample_jordan.png" alt="image product">
         </div>
         <div class="product_body">
             <h1 class="product_title">Jordan 1</h1>
@@ -15,7 +15,7 @@ include "header.php";
                 </select>
             </div>
             <div class="product_price">
-                <h2 class="price_value">100$</h2>
+                <h2 class="price_value">180$</h2>
             </div>
             <div class="product_details">
                 <p id="product_style">Product Style</p><br>
