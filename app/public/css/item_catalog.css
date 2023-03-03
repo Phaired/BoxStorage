@@ -2,7 +2,7 @@ body{
     font-family: Avenir;
 }
 /*Bloc pour le produit*/
-#item{
+#product{
     border: black;
     border-style: solid;
     display: flex;
@@ -11,13 +11,13 @@ body{
 }
 
 /*Détails du produit*/
-#details{
+#product_details{
     display: flex;
     flex-direction: row;
 }
 
 /*Prix du produit*/
-#price_item{
+#product_price{
     margin-top: 2.5vh;
     font-weight: bold;
 }

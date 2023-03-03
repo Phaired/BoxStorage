@@ -27,6 +27,18 @@ include_once ("header.php");
     include ("item_catalog.php");
     include ("item_catalog.php");
     include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
     ?>
 </div>
 <script type="module" src="../js/catalog.js"></script>
