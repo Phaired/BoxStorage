@@ -17,3 +17,6 @@ obj.map((e) => {
 })
 
 root.innerHTML = content
+
+
+fetch('/admincontroller/id', {method : 'DELETE'})
