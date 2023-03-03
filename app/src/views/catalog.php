@@ -41,6 +41,7 @@ include_once ("header.php");
     include ("item_catalog.php");
     ?>
 </div>
+<script type="module" src="../js/test.js"></script>
 <script type="module" src="../js/catalog.js"></script>
 <?php
 // appeler controller pour avoir données

@@ -2,6 +2,8 @@
 const form = document.getElementById("form");
 
 let body = {};
+
+// Premier load des données
 window.addEventListener('load', (e) => {
     body.request = "brands"
     fetch('http://localhost/catalogController.php', {
@@ -24,11 +26,12 @@ window.addEventListener('load', (e) => {
         method: 'POST',
         body: JSON.stringify(body)
     })
-        .then(response => console.log(response.json()))
-        .then(data => console.log(data))
+        .then(response => response.json())
+        .then(data => superBaba(data))
         .catch(error => console.log(error))
 });
 
+// On filtre les données
 form.addEventListener("submit", (e)=> {
     e.preventDefault()
 
@@ -44,8 +47,8 @@ form.addEventListener("submit", (e)=> {
         method: 'POST',
         body: JSON.stringify(body)
     })
-        .then(response => console.log(response.json()))
-        .then(data => console.log(data))
+        .then(response => response.json())
+        .then(data => superBaba(data))
         .catch(error => console.log(error))
 });
 
@@ -53,8 +56,11 @@ form.addEventListener("submit", (e)=> {
 function _populateBrands(response) {
     let str = "<option value=''>-- Please choose a brand --</option>"
     for (let i = 0; i < response.length; i++) {
-        console.log(response[i]);
         str += "<option value='"+ response[i].brand + "'>" + response[i].brand + "</option>";
     }
     document.getElementById("brand").innerHTML = str;
+}
+
+function superBaba(response) {
+    console.log(response);
 }

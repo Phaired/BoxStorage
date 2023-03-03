@@ -20,7 +20,7 @@ class Article
     public $title;
     public $tags;
 
-    public static function getArticles(array $search, int $limit, int $offset) {
+    public static function getArticles(array|null $search, int $limit, int $offset) {
         //$queryArgs = Article::buildQueryArgs();
         $sql = "select * from articles ";//where brand = " . $search->brand;
         if ($search != null) {
