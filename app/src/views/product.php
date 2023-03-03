@@ -7,7 +7,7 @@ require_once "../src/models/Article.php";
 <section class="product_section">
     <article class="product">
         <div class="product_img">
-            <img id="product_image" src="../img/sample_jordan.png" alt="image product">
+            <img id="product_image" src="" alt="image product">
         </div>
         <div class="product_body">
             <h1 id="title" class="product_title">Jordan 1</h1>
