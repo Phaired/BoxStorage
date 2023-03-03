@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     if($user!=null){
                         if (password_verify($password, $user->hash)) {
                             $_SESSION['username'] = $user->username;
+                            $_SESSION['role'] = $user->role;
                             header('Location: /');
                             exit();
                         } else {

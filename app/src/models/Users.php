@@ -12,6 +12,7 @@ class Users
     public string $zipcode;
     public string $city;
     public string $address;
+    public bool $role;
 
     public function getUserByUsername(string $username): ?Users
     {
@@ -37,6 +38,7 @@ class Users
             $usrObj->city = $result['city'];
             $usrObj->zipcode = $result['zipcode'];
             $usrObj->address = $result['address'];
+            $usrObj->role = $result['role'];
             return $usrObj;
         }
         else{

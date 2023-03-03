@@ -58,6 +58,7 @@ create table projet.users
     zipcode   varchar(16)  not null,
     city      varchar(255) not null,
     address   varchar(255) not null,
+    role      bool,
     constraint users_pk
         primary key (id)
 );
