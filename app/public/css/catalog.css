@@ -28,6 +28,7 @@ form{
     border-color: black;
     font-size: 15px;
     font-family: Avenir;
+    padding: 15px;
     top: 50vh;
     left: 16vw;
     transform: translate(-50%,-50%);
