@@ -1,5 +1,6 @@
 <?php
 require '../src/router/Router.php';
+echo "<link rel='stylesheet' href='../css/reset.css'/>";
 
 $router = new Router();
 
@@ -51,7 +52,7 @@ $router->map('POST', '/admin', function() {
     require dirname(__DIR__).'/src/views/admin.php';
 });
 
-$router->map('DELETE', '/admincontroller/[*:id]', function($id) {
+$router->map('GET', '/admincontroller/[*:id]', function($id) {
     require_once '../src/controllers/adminController.php';
     adminController::delete($id);
 });

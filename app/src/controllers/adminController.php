@@ -14,10 +14,10 @@ class adminController {
         foreach ($sqls as $sql){
             $req = $db->prepare($sql);
             $req->execute([
-                ":id" => $id
+                "id" => $id
             ]);
         }
-
+        echo "<a href='/admin'>Bien supprimer, retour</a>";
     }
 
 
