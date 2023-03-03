@@ -56,5 +56,18 @@ $articles->brand = "Nike";
 $articles->gender = "men";
 //var_dump($articles->getArticles("", 10, 0));
 Article::getBrands();*/
+/*require_once "../src/models/Article.php";
+
+
+echo Article::getArticles(
+    array(
+        "keyword" => "dunk",
+        "brand" => "Nike",
+        "min_price" => "100",
+        "max_price" => "300"
+    ),
+    1,
+    10
+);*/
 
 include "footer.php";
