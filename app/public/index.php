@@ -55,6 +55,11 @@ $router->map('PATCH', '/admincontroller', function() {
     adminController::update(file_get_contents('php://input'));
 });
 
+$router->map('POST', '/admincontroller', function() {
+    require_once '../src/controllers/adminController.php';
+    adminController::insert(file_get_contents('php://input'));
+});
+
 $match = $router->match();
 
 if( is_array($match) && is_callable( $match['target'] ) ) {
