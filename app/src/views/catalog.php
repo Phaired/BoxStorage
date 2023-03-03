@@ -2,6 +2,7 @@
 include_once ("header.php");
 ?>
 <link rel="stylesheet" href="css/catalog.css">
+<link rel="stylesheet" href="css/item_catalog.css">
 <link rel="shortcut icon" href="./img/logo_simple.png" />
 <div id="filter">
     <form id="form">
@@ -17,31 +18,7 @@ include_once ("header.php");
         <input type="submit" name="search" value="Search">
     </form>
 </div>
-<div id="products">
-    <?php
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    include ("item_catalog.php");
-    ?>
-</div>
-<script type="module" src="../js/test.js"></script>
+<div id="products"></div>
 <script type="module" src="../js/catalog.js"></script>
 <?php
 // appeler controller pour avoir données
