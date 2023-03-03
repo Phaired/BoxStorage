@@ -1,5 +1,7 @@
 <?php
 include_once ("header.php");
+require_once "../src/models/Article.php";
+//echo Article::getArticle("0042f5c5-8be4-4a40-982b-1b31dacec04b");
 ?>
 <link rel="stylesheet" href="../css/product_detail.css">
 <section class="product_section">
@@ -10,7 +12,7 @@ include_once ("header.php");
         <div class="product_body">
             <h1 id="title" class="product_title">Jordan 1</h1>
             <div class="product_size">
-                <select name="size">
+                <select id="size" name="size">
                     <option value="">Select size</option>
                 </select>
             </div>
@@ -23,6 +25,7 @@ include_once ("header.php");
                 <p id="product_desc">Product Style</p><br>
             </div>
             <button id="button_card">Add to Card</button>
+            <p id="no_stock">Not in stock</p>
         </div>
     </article>
 </section>

@@ -26,4 +26,16 @@ function populateProductDetails(response) {
     } else {
         document.getElementById("product_desc").style.display = "none";
     }
+
+    let sizes = JSON.parse(response.sizes);
+    let str = "<option value=''>-- Please choose a size --</option>"
+    for (let i = 0; i < sizes.length; i++) {
+        str += "<option value='"+ sizes[i].shoeSize + "'>" + sizes[i].shoeSize  + "</option>";
+    }
+    document.getElementById("size").innerHTML = str;
+
+    if (response.stock = false) {
+        document.getElementById("no_stock").style.display = "block";
+        document.getElementById("button_card").style.display = "none";
+    }
 }

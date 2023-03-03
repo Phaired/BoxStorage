@@ -10,8 +10,12 @@ class Stock
         return count($result->fetchAll(PDO::FETCH_ASSOC)) > 0;
     }
 
-    public static function getShoeSizes(string $shoeSize) {
-        return;
+    public static function getShoeSizes(string $shoeId) {
+        $sql = "select shoeSize from stocks where shoeId = '{$shoeId}' and quantity > 0";
+        $db = Database::getInstance();
+        $result = $db->prepare($sql);
+        $result->execute();
+        return json_encode($result->fetchAll(PDO::FETCH_ASSOC));
     }
 
     // destock shoe

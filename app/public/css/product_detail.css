@@ -60,6 +60,12 @@ body{
     font-weight: bold;
 }
 
-#button_card{
+#button_card, #no_stock{
     margin-top: 2vh;
+}
+
+#no_stock {
+    margin: auto;
+    color: red;
+    display: none;
 }

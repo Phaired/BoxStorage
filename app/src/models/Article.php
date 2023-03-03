@@ -54,6 +54,7 @@ class Article
         //$result->fetch(PDO::FETCH_ASSOC));
         $arr = $result->fetch(PDO::FETCH_ASSOC);
         $arr["stock"] = Stock::isInStock($shoeId);
+        $arr["sizes"] = Stock::getShoeSizes($shoeId);
         return json_encode($arr);
     }
 
