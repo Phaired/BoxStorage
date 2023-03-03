@@ -5,7 +5,10 @@
 
 }
 
-.products {
+#products {
+    margin-top: 15vh;
+    margin-left: 30vw;
+    margin-right: 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -18,6 +21,7 @@
     ". . . ."
     ". . . .";
 }
+
 form{
     position: absolute;
     border: black;

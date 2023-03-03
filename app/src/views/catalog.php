@@ -17,7 +17,18 @@ include_once ("header.php");
         <input type="submit" name="search" value="Search">
     </form>
 </div>
-<div id="products"></div>
+<div id="products">
+    <?php
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    include ("item_catalog.php");
+    ?>
+</div>
 <script type="module" src="../js/catalog.js"></script>
 <?php
 // appeler controller pour avoir données
