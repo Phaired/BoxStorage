@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "head.php";
+include_once "head.php";
 
 echo '<!DOCTYPE html>
 <html lang="fr">
@@ -23,10 +23,10 @@ echo
 
 if(isset($_SESSION['username']))
 {
-    echo '<a href="./logout"><img class="profil" src="../img/logout.svg" alt="logout"></a>';
+    echo '<a href="/logout"><img class="profil" src="../img/logout.svg" alt="logout"></a>';
 }
 else{
-    echo '<a href="./login"><img class="profil" src="../img/profil.svg" alt="profil"></a>';
+    echo '<a href="/login"><img class="profil" src="../img/profil.svg" alt="profil"></a>';
 }
 echo
 "    </div>

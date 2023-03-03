@@ -69,9 +69,9 @@ function addProductsToCatalog(response) {
         product += '<a href='+"/product/"+item.shoeId+'><div id="product">' +
             '<img id="product_image" src=' + item.imageUrl + 'alt="item photo">' +
             '<h1 id="product_title">'+item.name+'</h1> <div id="product_details">' +
-            '<h2 id="product_price">'+item.retailPrice+'</h2>' +
+            '<h2 id="product_price">'+item.retailPrice+'$</h2>' +
             '</div>' +
-            '</div></a>'
+            '</div></a>';
     })
     catalog.innerHTML += product;
 }

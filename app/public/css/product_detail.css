@@ -5,12 +5,12 @@ body{
 .product{
     margin-top: 10vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .product_img{
     margin-right: 2em;
-    width: 60vw;
+    width: 50%;
 }
 .product_img > img {
     max-width: 100%;
@@ -21,6 +21,7 @@ body{
     border: 3px solid #000;
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
 .product_title{
     font-size: 1.5em;
@@ -44,7 +45,7 @@ body{
 }
 .price_value{
     margin-top: 10vh;
-    font-weight: bold;
+    font-family: Avenir;
 }
 .product_price > h2{
     margin: 0;
