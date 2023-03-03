@@ -12,7 +12,6 @@ $router->map('POST', '/catalogController.php', function() {
 });
 
 
-
 $router->map('GET', '/login', function() {
     require dirname(__DIR__).'/src/views/login.php';
 });
@@ -43,6 +42,21 @@ $router->map('GET', '/admin', function() {
 
 $router->map('POST', '/admin', function() {
     require dirname(__DIR__).'/src/views/admin.php';
+});
+
+$router->map('DELETE', '/admincontroller/[*:id]', function($id) {
+    require_once '../src/controllers/adminController.php';
+    adminController::delete($id);
+});
+
+$router->map('PATCH', '/admincontroller', function() {
+    require_once '../src/controllers/adminController.php';
+    adminController::update(file_get_contents('php://input'));
+});
+
+$router->map('POST', '/admincontroller', function() {
+    require_once '../src/controllers/adminController.php';
+    adminController::insert(file_get_contents('php://input'));
 });
 
 $match = $router->match();

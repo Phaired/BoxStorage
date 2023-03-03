@@ -20,12 +20,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             echo Article::getBrands();
             break;
         case "products":
+            echo Article::getArticles(
+                array(
+                    "keyword" => $data["keyword"],
+                    "brand" => $data["brand"],
+                    "min_price" => $data["min_price"],
+                    "max_price" => $data["max_price"]
+                ),
+                1,
+                10
+            );
+            /*
             echo json_encode(
                 array(
                     "test3" => "3",
                     "test4" => "4"
                 )
-            );
+            );*/
             break;
     }
 }

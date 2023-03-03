@@ -1,4 +1,3 @@
-<?php
-require_once "../src/controllers/adminController.php";
-
-echo "afficher";
+<html>
+<script src="../js/admin.js"></script>
+</html>
