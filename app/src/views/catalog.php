@@ -41,7 +41,6 @@ include_once ("header.php");
     include ("item_catalog.php");
     ?>
 </div>
-<script type="module" src="../js/test.js"></script>
 <script type="module" src="../js/catalog.js"></script>
 <?php
 // appeler controller pour avoir données
@@ -57,18 +56,9 @@ $articles->brand = "Nike";
 $articles->gender = "men";
 //var_dump($articles->getArticles("", 10, 0));
 Article::getBrands();*/
-/*require_once "../src/models/Article.php";
+//require_once "../src/models/Article.php";
 
 
-echo Article::getArticles(
-    array(
-        "keyword" => "dunk",
-        "brand" => "Nike",
-        "min_price" => "100",
-        "max_price" => "300"
-    ),
-    1,
-    10
-);*/
+//echo Article::getArticle("0042f5c5-8be4-4a40-982b-1b31dacec04b");
 
 include "footer.php";

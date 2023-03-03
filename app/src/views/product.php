@@ -26,3 +26,4 @@ include "header.php";
         </div>
     </article>
 </section>
+<script type="module" src="../js/product.js"></script>

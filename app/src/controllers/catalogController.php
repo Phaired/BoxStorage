@@ -30,13 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 1,
                 10
             );
-            /*
-            echo json_encode(
-                array(
-                    "test3" => "3",
-                    "test4" => "4"
-                )
-            );*/
             break;
     }
 }
