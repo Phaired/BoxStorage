@@ -12,7 +12,6 @@ $router->map('POST', '/catalogController.php', function() {
 });
 
 
-
 $router->map('GET', '/login', function() {
     require dirname(__DIR__).'/src/views/login.php';
 });

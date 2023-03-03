@@ -1,0 +1,28 @@
+body{
+    font-family: Avenir;
+}
+/*Bloc pour le produit*/
+#product{
+    border: black;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Détails du produit*/
+#product_details{
+    display: flex;
+    flex-direction: row;
+}
+
+/*Prix du produit*/
+#product_price{
+    margin-top: 2.5vh;
+    font-weight: bold;
+}
+
+/*Image du panier*/
+#card{
+    width: 4vw;
+}
