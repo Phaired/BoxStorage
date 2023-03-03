@@ -1,5 +1,6 @@
 <?php
 require_once "../src/utils/Database.php";
+require_once "../src/models/Stock.php";
 
 class Article
 {
@@ -50,7 +51,10 @@ class Article
         $db = Database::getInstance();
         $result = $db->prepare($sql);
         $result->execute();
-        return json_encode($result->fetch(PDO::FETCH_ASSOC));
+        //$result->fetch(PDO::FETCH_ASSOC));
+        $arr = $result->fetch(PDO::FETCH_ASSOC);
+        $arr["stock"] = Stock::isInStock($shoeId);
+        return json_encode($arr);
     }
 
     public static function getBrands() {

@@ -1,8 +1,5 @@
 <?php
 include_once ("header.php");
-require_once "../src/models/Stock.php";
-echo Stock::isInStock("0042f5c5-8be4-4a40-982b-1b31dacec04b");
-//0042f5c5-8be4-4a40-982b-1b31dacec04b
 ?>
 <link rel="stylesheet" href="../css/product_detail.css">
 <section class="product_section">
