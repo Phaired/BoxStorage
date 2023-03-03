@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "head.php";
+include_once "head.php";
 
 echo '<!DOCTYPE html>
 <html lang="fr">
