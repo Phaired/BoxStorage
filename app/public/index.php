@@ -1,6 +1,5 @@
 <?php
 require '../src/router/Router.php';
-echo "<link rel='stylesheet' href='../css/reset.css'/>";
 
 $router = new Router();
 
