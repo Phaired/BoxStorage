@@ -1,6 +1,10 @@
 <?php
 session_start();
 include_once ('../src/models/Users.php');
+
+$admin = 1; // Le role est 1 pour l'admin
+$user = 0; // Le role est 0 pour un user lambda
+
 if(isset($_POST['username']) &&
     isset($_POST['firstname']) &&
     isset($_POST['lastname']) &&
@@ -28,6 +32,7 @@ if(isset($_POST['username']) &&
             $users->zipcode = $_POST['zipcode'];
             $users->city = $_POST['city'];
             $users->address = $_POST['address'];
+            $users->role = $user;
             $result = $users->addUser($users);
             if($result){
                 header("Location: /login?information=Your profil had been registered");
