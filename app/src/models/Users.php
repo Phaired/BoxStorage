@@ -63,7 +63,7 @@ class Users
             "zipcode" => $users->zipcode,
             "city" => $users->city,
             "address" => $users->address,
-            "role" => $users->role
+            "role" => 0
         ];
         $result = $db->prepare($sql);
         $result->execute($data);
