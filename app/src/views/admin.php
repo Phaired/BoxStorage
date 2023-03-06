@@ -1,3 +1,5 @@
+<?php
+session_start();?>
 <html>
 <body>
 <div id="root"></div>
@@ -5,6 +7,11 @@
 <link rel="stylesheet" href="../css/admin.css">
 <title>Admin</title>
 <?php
+if (isset($_SESSION["role"])){
+    if ($_SESSION["role"] !== true) {
+         header('Location: /login');
+    }
+}
 require_once "../src/models/Article.php";
 $data =  json_decode(Article::getArticles(null,-1, -1), true);
 echo "<table>";
