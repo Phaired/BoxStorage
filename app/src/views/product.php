@@ -1,7 +1,9 @@
 <?php
 include_once ("header.php");
-require_once "../src/models/Article.php";
+//require_once "../src/controllers/cardController.php";
 //echo Article::getArticle("0042f5c5-8be4-4a40-982b-1b31dacec04b");
+
+//var_dump(cardController::getCart());
 ?>
 <link rel="stylesheet" href="../css/product_detail.css">
 <title>Product</title>
