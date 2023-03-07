@@ -52,6 +52,10 @@ $router->map('GET', '/cardcontroller/[*:id]/[*:size]', function($id, $size) {
     cardController::addToCard($id, $size);
 });
 
+$router->map('POST', '/cardController.php', function() {
+    require_once '../src/controllers/cardController.php';
+});
+
 $router->map('GET', '/admin', function() {
     require dirname(__DIR__).'/src/views/admin.php';
 });

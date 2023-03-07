@@ -10,7 +10,7 @@ include "header.php";
             <div class="card_text_price">
                 <h2>
                     <span>Total : </span> <br>
-                    <span class="card_text_price_value">0$</span>
+                    <span id="card_text_price_value">0$</span>
                 </h2>
                 <div class="card_text_btns">
                     <a href="/login">Check Out</a>
@@ -23,8 +23,6 @@ include "header.php";
                 </div>
             </div>
         </article>
-        <div class="card_products">
-
-        </div>
+        <div id="card_products"></div>
     </section>
     <script type="module" src="../js/card.js"></script>

@@ -34,7 +34,7 @@ body{
     color: white;
 }
 
-.card_products{
+#card_products{
     margin-left: 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
