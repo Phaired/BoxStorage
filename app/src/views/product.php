@@ -25,7 +25,7 @@ require_once "../src/models/Article.php";
                 <p id="product_release">Product release</p><br>
                 <p id="product_desc">Product Style</p><br>
             </div>
-            <button id="button_card">Add to Card</button>
+            <a id="button_card" href="/card">Add to Card</a>
             <p id="no_stock">Not in stock</p>
         </div>
     </article>
