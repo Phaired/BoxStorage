@@ -74,7 +74,7 @@ $router->map('POST', '/admincontroller/modif', function() {
     adminController::update(file_get_contents('php://input'));
 });
 
-$router->map('POST', '/admincontroller', function() {
+$router->map('POST', '/admincontroller/insert', function() {
     require_once '../src/controllers/adminController.php';
     adminController::insert(file_get_contents('php://input'));
 });
