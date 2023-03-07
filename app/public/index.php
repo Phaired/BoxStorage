@@ -47,6 +47,11 @@ $router->map('POST', '/productController.php', function() {
     require dirname(__DIR__).'/src/controllers/productController.php';
 });
 
+$router->map('GET', '/cardcontroller/[*:id]/[*:size]', function($id, $size) {
+    require_once '../src/controllers/cardController.php';
+    cardController::addToCard($id, $size);
+});
+
 $router->map('GET', '/admin', function() {
     require dirname(__DIR__).'/src/views/admin.php';
 });
