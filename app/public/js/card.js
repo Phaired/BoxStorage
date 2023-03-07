@@ -7,6 +7,7 @@
             .then(data => {
                 addProductsToCard(data)
                 calculPrice(data)
+                addCheckOut()
             })
             //.then(data => calculPrice(data))
             .catch(error => console.log(error))
@@ -19,7 +20,7 @@ function addProductsToCard(response) {
     var card = document.getElementById("card_products");
     response.map((item)=> {
         item = JSON.parse(item)
-        product += `<a href='+"/product/"+${item.shoeId}+'><div id="product">`
+        product += `<a href='/product/${item.shoeId}'><div id="product">`
         product +=  `<img id="product_image" src='${item.imageUrl}' alt="item photo">`
         product += '<h1 id="product_title">'+item.name+'</h1> <div id="product_details">' 
         product +=  '<h2 id="product_price">'+item.retailPrice+'$</h2>' 
@@ -35,8 +36,18 @@ function addProductsToCard(response) {
 function calculPrice(response){
     var price = 0;
     response.map((item)=> {
-        price + item.retailPrice;
+        item = JSON.parse(item)
+        price += item.retailPrice;
     })
     var price_card = document.getElementById("card_text_price_value");
     price_card.innerHTML = price+"$";
+}
+
+function addCheckOut(){
+    let price_text = "";
+    price_text = document.getElementById("card_text_price_value").innerHTML;
+    console.log(price_text);
+    if(price_text !== "0$"){
+        document.getElementById("checkout").style.display = "block";
+    }
 }

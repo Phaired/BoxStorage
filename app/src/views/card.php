@@ -13,7 +13,7 @@ include "header.php";
                     <span id="card_text_price_value">0$</span>
                 </h2>
                 <div class="card_text_btns">
-                    <a href="/login">Check Out</a>
+                    <a id="checkout" href="/login">Check Out</a>
                     <?php
                     if(!isset($_SESSION['username']))
                     {
