@@ -34,8 +34,9 @@ function populateProductDetails(response) {
     }
     document.getElementById("size").innerHTML = str;
 
-    if (response.stock = false) {
+    if (response.stock == false) {
         document.getElementById("no_stock").style.display = "block";
         document.getElementById("button_card").style.display = "none";
+        document.getElementById("button_order").style.display = "none";
     }
 }
