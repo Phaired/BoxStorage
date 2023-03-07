@@ -35,7 +35,6 @@ $router->map('POST','/controllers/loginController.php', function () {
     require dirname(__DIR__).'/src/controllers/loginController.php';
 });
 
-
 $router->map('GET', '/catalog', function() {
     require dirname(__DIR__).'/src/views/catalog.php';
 });
@@ -66,7 +65,7 @@ $router->map('GET', '/admincontroller/[*:id]', function($id) {
     adminController::delete($id);
 });
 
-$router->map('PATCH', '/admincontroller', function() {
+$router->map('POST', '/admincontroller/modif', function() {
     require_once '../src/controllers/adminController.php';
     adminController::update(file_get_contents('php://input'));
 });
