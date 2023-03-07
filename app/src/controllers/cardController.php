@@ -2,9 +2,9 @@
 
 class cardController {
     public static function addToCard($id, $size) {
-        if (!isset($_SESSION["card"])) {
-            session_start();
-        }
+        session_start();
+
+        var_dump($_SESSION);
         if (!isset($_SESSION["card"])) {
             $_SESSION["card"] = [];
         }
@@ -14,6 +14,7 @@ class cardController {
             "shoeSize" => $size,
         );
 
+        header("Location: /product/{$id}");
     }
 
 }

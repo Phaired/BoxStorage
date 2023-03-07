@@ -14,6 +14,18 @@ window.addEventListener('load', (e) => {
         .catch(error => console.log(error))
 });
 
+document.getElementById("button_card").addEventListener("click", function (e) {
+    let select = document.getElementById("size");
+    let value = select.options[select.selectedIndex].value;
+    let url = window.location.href.split("/");
+
+    if (value) {
+        window.location.href = "/cardcontroller/" + url[url.length - 1] + "/" + value;
+    } else {
+        alert("Please select a size before !")
+    }
+});
+
 function populateProductDetails(response) {
     console.log(response);
     document.getElementById("product_image").src = response.imageUrl;
