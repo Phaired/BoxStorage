@@ -1,17 +1,26 @@
 body{
     font-family: Avenir;
 }
+#cross{
+    width: 4vw;
+}
 .card_section{
     display: flex;
     margin-left: 5.5vw;
 }
 
-.card_text_btns > button{
+.card_text_btns{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card_text_btns > a{
     margin-bottom: 1vh;
     margin-top: 2vh;
-    margin-left: 3.5vw;
-    padding: 0.8em;
-    width: 12em;
+    margin-left: 4vw;
+    padding: 1em 2em 1em 2em;
+
     border-radius: 1.5em;
     border: none;
     color: #fff;
@@ -20,14 +29,13 @@ body{
     cursor: pointer;
     transition: all 0.5s;
 }
-.card_text_btns > button:hover{
+.card_text_btns > a:hover{
     background: #000000;
     color: white;
 }
 
-
-
 .card_products{
+    margin-left: 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
