@@ -24,7 +24,7 @@ function modif(id) {
 
 
 function setObject(res) {
-    let content = "<form>"
+    let content = "<form id='modifform'>"
     content += `<input type='text' value='${res.brand}'/>`;
     content += `<input type='text' value='${res.category}'/>`;
     content += `<input type='text' value='${res.colorway}'/>`;
@@ -40,6 +40,11 @@ function setObject(res) {
     content += `<input type='text' value='${res.title}'/>`;
     content += `<input type='text' value='${res.tags}'/>`;
 
+    JSON.parse(res.sizes).map((e) => {
+        content += `<label for='size' >${e.shoeSize}</label>`;
+        content += `<input id='size' type='text' value='${e.quantity}'/>`;
+    })
+
 
 
 
@@ -48,4 +53,5 @@ function setObject(res) {
 
     content += `<h1>${res.category}</h1>`
     content += "</form>"
+    root.innerHTML = content;
 }

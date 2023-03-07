@@ -16,3 +16,8 @@ table {
 .modifbtn:hover, .deletelink:hover {
     text-decoration: underline black;
 }
+
+#modifform {
+    display: flex;
+    flex-direction: column;
+}
