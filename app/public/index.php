@@ -19,6 +19,10 @@ $router->map('GET', '/signup', function() {
     require dirname(__DIR__) . '/src/views/signup.php';
 });
 
+$router->map('GET', '/card', function() {
+    require dirname(__DIR__) . '/src/views/card.php';
+});
+
 $router->map('GET','/logout', function () {
     require dirname(__DIR__).'/src/controllers/logoutController.php';
 });
@@ -30,6 +34,7 @@ $router->map('POST','/controllers/signupController.php', function () {
 $router->map('POST','/controllers/loginController.php', function () {
     require dirname(__DIR__).'/src/controllers/loginController.php';
 });
+
 
 $router->map('GET', '/catalog', function() {
     require dirname(__DIR__).'/src/views/catalog.php';

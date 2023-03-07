@@ -32,7 +32,7 @@ if(isset($_POST['username']) &&
             $users->zipcode = $_POST['zipcode'];
             $users->city = $_POST['city'];
             $users->address = $_POST['address'];
-            $users->role = true;
+            $users->role = 0;
             $result = $users->addUser($users);
             if($result){
                 header("Location: /login?information=Your profil had been registered");

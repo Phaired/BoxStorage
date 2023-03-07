@@ -1,0 +1,42 @@
+body{
+    font-family: Avenir;
+}
+.card_section{
+    display: flex;
+    margin-left: 5.5vw;
+}
+
+.card_text_btns > button{
+    margin-bottom: 1vh;
+    margin-top: 2vh;
+    margin-left: 3.5vw;
+    padding: 0.8em;
+    width: 12em;
+    border-radius: 1.5em;
+    border: none;
+    color: #fff;
+    background: #343333;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.card_text_btns > button:hover{
+    background: #000000;
+    color: white;
+}
+
+
+
+.card_products{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 2% 3%;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . .";
+}
