@@ -11,6 +11,7 @@ if (isset($_SESSION["role"]) && ($_SESSION["role"] !== true) ){
 <?php
 require_once "../src/models/Article.php";
 $data =  json_decode(Article::getArticles(null,-1, -1), true);
+echo "<button id='additem'>Ajouter un produit</button>";
 echo "<div id='root'><table>";
 foreach ($data as $item) {
     echo "<tr>";

@@ -1,12 +1,18 @@
 const root = document.getElementById('root');
 
 const modifbuttons = Array.from(document.getElementsByClassName("modifbtn"));
+const addbtn = document.getElementById('additem')
 
 modifbuttons.forEach((item) => {
     item.addEventListener("click",  (e) => {
         modif(e.target.dataset.id);
     });
 });
+
+addbtn.addEventListener('click', () => {
+    root.innerHTML = "";
+    addObject()
+})
 
 
 
@@ -21,7 +27,6 @@ function modif(id) {
         .then(res => res.json())
         .then(res => setObject(res))
 }
-
 
 function setObject(res) {
     let content = "<form id='modifform'>"
@@ -60,6 +65,52 @@ function setObject(res) {
         const formdata = new FormData(e.target)
         //console.log(formdata.getAll('brand'))
         fetch('/admincontroller/modif', {
+            method: 'post',
+            body: JSON.stringify(Object.fromEntries(formdata))
+        })
+    })
+}
+
+function addObject() {
+    let content = "<form id='addform'>"
+    content += `<input name="brand" type='text' value='brand'/>`;
+    content += `<input name="category" type='text' value='category'/>`;
+    content += `<input name="colorway" type='text' value='colorway'/>`;
+    content += `<input name="releaseDate" type='text' value='2022-06-08'/>`;
+    content += `<input name="imageUrl" type='text' value='imageUrl'/>`;
+    content += `<input name="condition" type='text' value='condition'/>`;
+    content += `<input name="countryOfManufacture" type='text' value='countryOfManufacture'/>`;
+    content += `<input name="description" type='text' value='description'/>`;
+    content += `<input name="gender" type='text' value='gender'/>`;
+    content += `<input name="name" type='text' value='name'/>`;
+    content += `<input name="productCategory" type='text' value='1'/>`;
+    content += `<input name="retailPrice" type='text' value='10'/>`;
+    content += `<input name="shoe" type='text' value='shoe'/>`;
+    content += `<input name="shortDescription" type='text' value='shortDescription'/>`;
+    content += `<input name="title" type='text' value='title'/>`;
+    content += `<input name="tags" type='text' value='tags'/>`;
+
+
+    for(let i = 35; i <= 45; i++){
+        content += `<label >Taille : ${i}</label>`;
+        content += `<input name='${i}' type='text' value='0'/>`;
+    }
+
+
+
+
+    content += "<input type='submit'/>"
+
+
+
+    content += "</form>"
+    root.innerHTML = content;
+    const form = document.getElementById('addform')
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const formdata = new FormData(e.target)
+        //console.log(formdata.getAll('brand'))
+        fetch('/admincontroller/insert', {
             method: 'post',
             body: JSON.stringify(Object.fromEntries(formdata))
         })

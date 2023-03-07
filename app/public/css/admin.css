@@ -17,7 +17,7 @@ table {
     text-decoration: underline black;
 }
 
-#modifform {
+#modifform, #addform {
     display: flex;
     flex-direction: column;
 }
