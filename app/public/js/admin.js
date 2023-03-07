@@ -25,7 +25,7 @@ function modif(id) {
 
 function setObject(res) {
     let content = "<form id='modifform'>"
-    content += `<input type='text' value='${res.brand}'/>`;
+    content += `<input id="brand" type='text' value='${res.brand}'/>`;
     content += `<input type='text' value='${res.category}'/>`;
     content += `<input type='text' value='${res.colorway}'/>`;
     content += `<input type='text' value='${res.condition}'/>`;
@@ -47,11 +47,18 @@ function setObject(res) {
 
 
 
+    content += "<input type='submit'/>"
 
 
 
-
-    content += `<h1>${res.category}</h1>`
     content += "</form>"
     root.innerHTML = content;
+    const form = document.getElementById('modifform')
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        console.log(e.target)
+        const formdata = new FormData(e.target)
+        console.log(formdata)
+        //fetch('/admincontroller/modif', )
+    })
 }

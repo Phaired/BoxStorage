@@ -23,6 +23,7 @@ class adminController {
 
 
     public static function update(string $item) {
+        var_dump($item);
         $db = Database::getInstance();
         $item = json_decode($item, true);
 
