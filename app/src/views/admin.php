@@ -1,7 +1,9 @@
 <?php
 session_start();
+var_dump($_SESSION);
+$_SESSION["panier"] = [',fops', 'apofa'];
 if (isset($_SESSION["role"]) && ($_SESSION["role"] !== true) ){
-    header('Location: /login');
+    //header('Location: /login');
 }
 ?>
 <html>

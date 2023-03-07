@@ -25,6 +25,27 @@ function modif(id) {
 
 function setObject(res) {
     let content = "<form>"
+    content += `<input type='text' value='${res.brand}'/>`;
+    content += `<input type='text' value='${res.category}'/>`;
+    content += `<input type='text' value='${res.colorway}'/>`;
+    content += `<input type='text' value='${res.condition}'/>`;
+    content += `<input type='text' value='${res.countryOfManufacture}'/>`;
+    content += `<input type='text' value='${res.description}'/>`;
+    content += `<input type='text' value='${res.gender}'/>`;
+    content += `<input type='text' value='${res.name}'/>`;
+    content += `<input type='text' value='${res.productCategory}'/>`;
+    content += `<input type='text' value='${res.retailPrice}'/>`;
+    content += `<input type='text' value='${res.shoe}'/>`;
+    content += `<input type='text' value='${res.shortDescription}'/>`;
+    content += `<input type='text' value='${res.title}'/>`;
+    content += `<input type='text' value='${res.tags}'/>`;
+
+
+
+
+
+
+
     content += `<h1>${res.category}</h1>`
     content += "</form>"
 }
