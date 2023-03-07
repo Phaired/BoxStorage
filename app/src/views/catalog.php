@@ -21,22 +21,6 @@ include_once ("header.php");
 <div id="products"></div>
 <script type="module" src="../js/catalog.js"></script>
 <?php
-// appeler controller pour avoir données
 
-// nécessaire de faire du js pour écouter events
-// si maj alors get new data pour valoriser
-
-
-/*
-
-$articles = new Article();
-$articles->brand = "Nike";
-$articles->gender = "men";
-//var_dump($articles->getArticles("", 10, 0));
-Article::getBrands();*/
-//require_once "../src/models/Article.php";
-
-
-//echo Article::getArticle("0042f5c5-8be4-4a40-982b-1b31dacec04b");
 
 include "footer.php";

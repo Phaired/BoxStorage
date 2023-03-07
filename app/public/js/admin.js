@@ -1,22 +1,30 @@
 const root = document.getElementById('root');
 
+const modifbuttons = Array.from(document.getElementsByClassName("modifbtn"));
 
-class Item {
-    constructor(id, name) {
-        this.id = id
-        this.name = name
-    }
+modifbuttons.forEach((item) => {
+    item.addEventListener("click",  (e) => {
+        modif(e.target.dataset.id);
+    });
+});
+
+
+
+function modif(id) {
+    root.innerHTML = "";
+    fetch('http://localhost/productController.php', {
+        method: 'POST',
+        body: JSON.stringify({
+            shoeId: id,
+            admin: true
+        })})
+        .then(res => res.json())
+        .then(res => setObject(res))
 }
 
 
-const obj = [new Item(1, "abc"), new Item(2, "test")]
-
-let content = ""
-obj.map((e) => {
-    content += `<div><p>${e.id}</p><p>${e.name}</p></div>`
-})
-
-root.innerHTML = content
-
-
-fetch('/admincontroller/id', {method : 'DELETE'})
+function setObject(res) {
+    let content = "<form>"
+    content += `<h1>${res.category}</h1>`
+    content += "</form>"
+}

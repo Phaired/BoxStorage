@@ -19,8 +19,8 @@ echo '<!DOCTYPE html>
             <img id="insta" src="./img/insta.svg" alt="instagram">
             <img id="twitter" src="./img/twitter.svg" alt="twitter">';
 if (isset($_SESSION['username'])) {
-    if ($_SESSION['username'] === "remy") {
-        echo("<a href='/admin'>admin</a>");
+    if ($_SESSION['role'] === true) {
+        echo("<a href='/admin'><img src='./img/admin.svg'></a>");
     }
 }
 

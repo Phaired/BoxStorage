@@ -23,11 +23,14 @@ echo
 
 if(isset($_SESSION['username']))
 {
-    echo '<a href="/logout"><img class="profil" src="../img/logout.svg" alt="logout"></a>';
+    echo' <a href="/card"><img class="connected" src="../img/card.svg" alt="card"></a>';
+    echo '<a href="/logout"><img class="connected" src="../img/logout.svg" alt="logout"></a>';
 }
 else{
-    echo '<a href="/login"><img class="profil" src="../img/profil.svg" alt="profil"></a>';
+    echo' <a href="/card"><img class="unconnected" src="../img/card.svg" alt="card"></a>';
+    echo '<a href="/login"><img class="unconnected" src="../img/profil.svg" alt="profil"></a>';
 }
+
 echo
 "    </div>
 </body>";

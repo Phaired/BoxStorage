@@ -6,3 +6,13 @@ tr, td {
 table {
     border-collapse: collapse;
 }
+
+
+.modifbtn, .deletelink {
+    all: unset;
+    cursor: pointer;
+}
+
+.modifbtn:hover, .deletelink:hover {
+    text-decoration: underline black;
+}
