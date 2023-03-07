@@ -27,3 +27,4 @@ include "header.php";
 
         </div>
     </section>
+    <script type="module" src="../js/card.js"></script>
