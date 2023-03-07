@@ -23,7 +23,6 @@ class adminController {
 
 
     public static function update(string $item) {
-        var_dump($item);
         $db = Database::getInstance();
         $item = json_decode($item, true);
 
@@ -48,12 +47,26 @@ class adminController {
                     `condition`=:condition, countryOfManufacture=:countryOfManufacture,
                     `description`=:description, gender=:gender, `name`=:name, retailPrice=:retailPrice,
                     shoe=:shoe, shortDescription=:shortDescription, title=:title, tags=:tags
-                    where shoeId=:shoeId;
-                    ";
+                    where shoeId=:shoeId;";
 
         $req = $db->prepare($sql);
 
         $req->execute($data);
+
+        for($i = 35; $i=$i+1; $i<=45){
+            var_dump($i);
+            $sql = "update stocks set quantity=:quantity where shoeId=:shoeId and shoeSize=:shoeSize;";
+            $req = $db->prepare($sql);
+            $data = [
+                "shoeId" => $item["shoeId"],
+                "quantity" => $item[$i],
+                "shoeSize" => $i
+            ];
+            $req->execute($data);
+        }
+
+        //header('Location: /admin');
+
     }
 
 
