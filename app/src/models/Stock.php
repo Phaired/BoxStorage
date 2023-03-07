@@ -18,5 +18,13 @@ class Stock
         return json_encode($result->fetchAll(PDO::FETCH_ASSOC));
     }
 
+    public static function getShoeSizesAdmin(string $shoeId) {
+        $sql = "select shoeSize, quantity from stocks where shoeId = '{$shoeId}'";
+        $db = Database::getInstance();
+        $result = $db->prepare($sql);
+        $result->execute();
+        return json_encode($result->fetchAll(PDO::FETCH_ASSOC));
+    }
+
     // destock shoe
 }

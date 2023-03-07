@@ -1,20 +1,17 @@
 <?php
-session_start();?>
+session_start();
+if (isset($_SESSION["role"]) && ($_SESSION["role"] !== true) ){
+    header('Location: /login');
+}
+?>
 <html>
 <body>
-<div id="root"></div>
-<script src="../js/admin.js"></script>
 <link rel="stylesheet" href="../css/admin.css">
 <title>Admin</title>
 <?php
-if (isset($_SESSION["role"])){
-    if ($_SESSION["role"] !== true) {
-         header('Location: /login');
-    }
-}
 require_once "../src/models/Article.php";
 $data =  json_decode(Article::getArticles(null,-1, -1), true);
-echo "<table>";
+echo "<div id='root'><table>";
 foreach ($data as $item) {
     echo "<tr>";
     echo "<td>{$item["brand"]}</td>";
@@ -23,9 +20,8 @@ foreach ($data as $item) {
     echo "<td>{$item["condition"]}</td>";
     echo "<td>{$item["countryOfManufacture"]}</td>";
     echo "<td>{$item["shortDescription"]}</td>";
-
-
-    echo "<td><a href='/admincontroller/{$item["shoeId"]}' >Delete</a></td>";
+    echo "<td><a class='deletelink' href='/admincontroller/{$item["shoeId"]}' >Delete</a></td>";
+    echo "<td><button data-id='{$item["shoeId"]}' class='modifbtn'>Modif</button></td>";
     /*
     echo "<td>".
     "<button
@@ -36,9 +32,11 @@ foreach ($data as $item) {
     echo "</td>";
 
 }
-echo "</table>";
+echo "</table></div>";
 
 ?>
 
 </body>
+<script src="../js/admin.js"></script>
+
 </html>

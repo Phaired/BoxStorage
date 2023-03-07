@@ -68,7 +68,7 @@ $router->map('POST', '/admincontroller', function() {
 
 $match = $router->match();
 
-if( is_array($match) && is_callable( $match['target'] ) ) {
+if(is_array($match) && is_callable( $match['target'])) {
     call_user_func_array( $match['target'], $match['params'] );
 } else {
     // no route was matched

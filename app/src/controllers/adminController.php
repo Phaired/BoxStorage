@@ -17,6 +17,7 @@ class adminController {
                 "id" => $id
             ]);
         }
+        header('Location: /admin');
         echo "<a href='/admin'>Bien supprimer, retour</a>";
     }
 

@@ -58,6 +58,18 @@ class Article
         return json_encode($arr);
     }
 
+    public static function getArticleAdmin(string $shoeId) {
+        $sql = "select * from articles where shoeId = '{$shoeId}'";
+        $db = Database::getInstance();
+        $result = $db->prepare($sql);
+        $result->execute();
+        //$result->fetch(PDO::FETCH_ASSOC));
+        $arr = $result->fetch(PDO::FETCH_ASSOC);
+        $arr["stock"] = Stock::isInStock($shoeId);
+        $arr["sizes"] = Stock::getShoeSizesAdmin($shoeId);
+        return json_encode($arr);
+    }
+
     public static function getBrands() {
         $sql = "select distinct brand from articles";
         $db = Database::getInstance();
